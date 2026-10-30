@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    color-scheme: light;
+  }
+  
+  body {
+    background-color: #FBF9F5;
+    color: #121316;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: #B8860B;
+    color: #ffffff;
+  }
+}
+
+/* Custom editorial styles */
+.font-editorial {
+  font-family: 'Cormorant Garamond', Playfair Display, Georgia, serif;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FBF9F5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D8D2C6;
+  border-radius: 4px;
+}
+
+/* Bowtie Video Morphing */
+.morph-clip {
+  transition: clip-path 0.75s cubic-bezier(0.22, 1, 0.36, 1), transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: clip-path;
+}
+
+/* Momo Comic Balance Stumble on Bottles (Hover Effect) */
+@keyframes momoStumble {
+  0% {
+    transform: rotate(0deg) translate(0, 0);
+  }
+  14% {
+    transform: rotate(-8deg) translate(-2px, -1px);
+  }
+  28% {
+    transform: rotate(9deg) translate(2.5px, 0.5px);
+  }
+  42% {
+    transform: rotate(-6deg) translate(-1.5px, -0.5px);
+  }
+  56% {
+    transform: rotate(7deg) translate(2px, 0);
+  }
+  70% {
+    transform: rotate(-4deg) translate(-1px, 0.5px);
+  }
+  84% {
+    transform: rotate(3deg) translate(1px, -0.5px);
+  }
+  100% {
+    transform: rotate(0deg) translate(0, 0);
+  }
+}
+
+.animate-momo-stumble {
+  transform-origin: 50% 95%;
+  animation: momoStumble 1.15s cubic-bezier(0.33, 1, 0.68, 1) infinite;
+}
+
+/* Infinite Partner Marquee Slider */
+@keyframes marqueeGlide {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-marquee-glide {
+  display: flex;
+  width: max-content;
+  animation: marqueeGlide 36s linear infinite;
+  will-change: transform;
+}
+
+.marquee-track:hover .animate-marquee-glide,
+.animate-marquee-glide:hover {
+  animation-play-state: paused !important;
+}
+
+
